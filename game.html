@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+
+<body > 
+    <div class="container"  onclick="two()">
+<div class="start" ><h1 class="h1">1</h1></div>
+<div class="end"><h1 class="h2">2</h1></div>
+<div class="show"><h1 class="h3">3</h1></div>
+</div>
+<style>
+
+
+
+.start{
+   position: relative;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    /* background-color: red; */
+    border-radius: 100%;
+    transition: all 3s ease;
+   
+}
+
+
+
+
+.container{
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    border: 1px solid  black;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    
+}
+
+.end{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    /* background-color: red; */
+    border-radius: 100%;
+    transition: all 1s ease;
+}
+.show{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    /* background-color: red; */
+    border-radius: 100%;
+    transition: all 1s ease;
+}
+h1{
+    text-align: center;
+    
+}
+</style>
+<script>
+    
+
+let start = document.querySelector('.start');
+let end = document.querySelector('.end');
+let show = document.querySelector('.show');
+let h1 = document.querySelector('.h1');
+let h2 = document.querySelector('.h2');
+let h3 = document.querySelector('.h3');
+let container= document.querySelector('.container');
+
+
+
+const random = ()=>{
+    let letters = '120'.split('');
+    let hash = '';
+    for(let i=0;i<3;i++){
+        let randColors = letters[Math.floor(Math.random() * 3)]
+        hash += randColors;
+    }
+    // console.log(hash);
+    return hash + 'px';
+ 
+}
+setInterval(()=>{
+    start.style.margin  = random();
+    show.style.margin = random();
+    end.style.margin = random();
+    
+    
+},1000)
+
+
+
+const colors = ()=>{
+    let letters = '0123456789ABCDEF'.split('');
+    let hash = '#';
+    for(let i=0;i<6;i++){
+        let randColors = letters[Math.floor(Math.random() * 16)]
+        hash += randColors;
+    }
+    // console.log(hash);
+   
+    return hash;
+}
+
+setInterval(() => {
+    start.style.backgroundColor = colors()
+    show.style.backgroundColor = colors()
+    end.style.backgroundColor = colors()
+    h1.style.color = colors()
+    h2.style.color = colors()
+    h3.style.color = colors()
+    
+},1000)
+
+const two = ()=>{
+  setInterval(()=>{
+    container.style.backgroundColor = colors()
+  },2000)
+}
+
+</script>
+
+</body>
+</html>

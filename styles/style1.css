@@ -1,0 +1,29 @@
+*{
+    margin: 0px;
+    
+}
+body{
+    background: gray;
+    font-family: sans-serif;
+    background-image:url(./images/2.jpg);
+    background-size: 100%;
+}
+.container{
+    height: 69px;
+    width: 70%;
+    background: rgb(160, 160, 160);
+    margin: 250px auto;
+    line-height: 70px;
+}
+a{
+    color: rgb(68, 68, 68);
+    font-weight: bold;
+    padding: 26px;
+    margin-left: 38px;
+    text-decoration: none;
+}
+a:hover{
+    background: rgb(190, 190, 190);
+    color: black;
+    border-radius: 5px;
+}
